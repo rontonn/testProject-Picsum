@@ -14,15 +14,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainTableWithPictures: UITableView!
     
     var downloadedListOfPrefferedNumberOfImages = [[PicsumImage]]()
-    let placeholderImage = UIImageView()
+    var placeholderImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableWithPictures.delegate = self
         mainTableWithPictures.dataSource = self
-        
-        placeholderImage.af_setImage(withURL: URL(string: "https://picsum.photos/300")!)
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -71,6 +69,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         cell.horizontalCollectionView.tag = indexPath.section
         cell.horizontalCollectionView.delegate = self
         cell.horizontalCollectionView.dataSource = self
+        cell.horizontalCollectionView.reloadData()
         return cell
     }
     
@@ -85,8 +84,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
         
-        cell.imageViewForImageFromPicsum.af_setImage(withURL: URL(string: "https://picsum.photos/300/300?image=\(downloadedListOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)")!, placeholderImage: placeholderImage.image, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.2), runImageTransitionIfCached: false, completion: { response in
-        })
+        cell.imageViewForImageFromPicsum.af_setImage(withURL: URL(string: "https://picsum.photos/300/300?image=\(downloadedListOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)")!, placeholderImage: placeholderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.25), runImageTransitionIfCached: false, completion: { response in })
         cell.layer.cornerRadius = 12.0
         cell.lblAuthorName.text = downloadedListOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].author
         

@@ -19,6 +19,7 @@ class GreetingViewController: UIViewController {
     @IBOutlet weak var textViewForPrefferedNumber: UITextField!
     @IBOutlet weak var btnProceed: UIButton!
     var downloadedListOfImages = [PicsumImage]()
+    let placeholderImageView = UIImageView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,19 @@ class GreetingViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        view.isUserInteractionEnabled = false
+        
+        placeholderImageView.af_setImage(withURL: URL(string: "https://picsum.photos/300")!) {
+            response in
+            if response.result.description == "SUCCESS" && response.response?.statusCode == 200 {
+                self.view.isUserInteractionEnabled = true
+            } else {
+                let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: "There is a network problem, please restart the app.", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in }))
+                self.present(alert, animated: true, completion: nil)
+            }
+        }
         
         btnProceed.layer.cornerRadius = 8.0
         textViewForPrefferedNumber.delegate = self
@@ -125,6 +139,10 @@ class GreetingViewController: UIViewController {
                 imagesForCollectionView.append(tempArray)
                 tempArray.removeAll()
                 
+            }
+            
+            if let image = placeholderImageView.image {
+                controller.placeholderImage = image
             }
             
             controller.downloadedListOfPrefferedNumberOfImages = imagesForCollectionView

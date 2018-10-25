@@ -15,7 +15,6 @@ class VerticalTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         horizontalCollectionView.layer.cornerRadius = 12.0
-        
         // Initialization code
     }
 
