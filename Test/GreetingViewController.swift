@@ -45,7 +45,7 @@ class GreetingViewController: UIViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         } else {
-            if let number = Int(textViewForPrefferedNumber.text!) {
+            if let number = Int(textViewForPrefferedNumber.text!), number > 0 {
                 
                 Picsum.fetchPicsumImage { [weak self] (images, error) -> (Void) in
                     if let e = error {
@@ -57,7 +57,7 @@ class GreetingViewController: UIViewController {
                 }
                 
             } else {
-                let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: "Please input INTEGER number!", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: "Please input positive integer number!", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
                     self.view.isUserInteractionEnabled = true
                 }))
