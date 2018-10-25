@@ -52,7 +52,18 @@ class GreetingViewController: UIViewController {
                         print("Error happend! - \(e)")
                     } else {
                         self?.downloadedListOfImages = images
-                        self?.performSegue(withIdentifier: "fromGreetingScreenToMainViewScreen", sender: self)
+                        
+                        if number > images.count {
+                            
+                            let alert = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: "Maximum amount of images in the network library - \(images.count).", preferredStyle: UIAlertController.Style.alert)
+                            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                                self?.performSegue(withIdentifier: "fromGreetingScreenToMainViewScreen", sender: self)
+                            }))
+                            self!.present(alert, animated: true, completion: nil)
+                            
+                        } else {
+                            self?.performSegue(withIdentifier: "fromGreetingScreenToMainViewScreen", sender: self)
+                        }
                     }
                 }
                 
@@ -71,11 +82,14 @@ class GreetingViewController: UIViewController {
         if segue.identifier == "fromGreetingScreenToMainViewScreen" {
             let controller = segue.destination as! MainViewController
             
-            let numberOfImages = Int(textViewForPrefferedNumber.text!)!
+            var numberOfImages = Int(textViewForPrefferedNumber.text!)!
             var numberOfSectionsInTheTable = 0
             var arrayForCollectionViewCells = [Int]()
             var imagesForCollectionView = [[PicsumImage]]()
             
+            if numberOfImages > downloadedListOfImages.count {
+                numberOfImages = downloadedListOfImages.count
+            }
             //solving logic for arranging images in the table and collection view
             if numberOfImages > 50 {
                 
