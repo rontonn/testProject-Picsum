@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PicsumViewController.swift
 //  Test
 //
 //  Created by Anton Romanov on 24/10/2018.
@@ -9,26 +9,27 @@
 import UIKit
 import AlamofireImage
 
-class MainViewController: UIViewController {
+class PicsumViewController: BaseViewController {
     
     @IBOutlet weak var mainTableWithPictures: UITableView!
     
-    var downloadedListOfPrefferedNumberOfImages = [[PicsumImage]]()
-    var placeholderImage = UIImage()
+    private var picsumViewModel = PicsumViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mainTableWithPictures.delegate = self
         mainTableWithPictures.dataSource = self
-
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func createViewModel() {
+        commmonTypeViewModel = picsumViewModel
     }
     
 }
 
-extension MainViewController: UITableViewDataSource, UITableViewDelegate {
+extension PicsumViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return downloadedListOfPrefferedNumberOfImages.count
+        return picsumViewModel.listOfPrefferedNumberOfImages.count
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -76,17 +77,17 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension PicsumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return downloadedListOfPrefferedNumberOfImages[collectionView.tag].count
+        return picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
         
-        cell.imageViewForImageFromPicsum.af_setImage(withURL: URL(string: "https://picsum.photos/300/300?image=\(downloadedListOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)")!, placeholderImage: placeholderImage, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.25), runImageTransitionIfCached: false, completion: { response in })
+        cell.imageViewForImageFromPicsum.af_setImage(withURL: URL(string: "https://picsum.photos/300/300?image=\(picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)")!, placeholderImage: picsumViewModel.placeholder, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.25), runImageTransitionIfCached: false, completion: { response in })
         cell.layer.cornerRadius = 12.0
-        cell.lblAuthorName.text = downloadedListOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].author
+        cell.lblAuthorName.text = picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].author
         
         return cell
     }
@@ -109,7 +110,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 //MARK: - Scroll View Delegate
-extension MainViewController: UIScrollViewDelegate {
+extension PicsumViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == mainTableWithPictures {

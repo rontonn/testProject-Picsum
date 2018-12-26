@@ -7,6 +7,12 @@
 //
 
 import UIKit
+import AlamofireImage
+
+let imageCache = AutoPurgingImageCache(
+    memoryCapacity: 100_000_000,
+    preferredMemoryUsageAfterPurge: 60_000_000
+)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

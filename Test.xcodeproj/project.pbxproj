@@ -11,12 +11,19 @@
 		E82C9FC02180BC1C00007D1B /* Picsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82C9FBF2180BC1C00007D1B /* Picsum.swift */; };
 		E82C9FC22180C59800007D1B /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82C9FC12180C59800007D1B /* GreetingViewController.swift */; };
 		E85A60162180A11D00768BD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A60152180A11D00768BD4 /* AppDelegate.swift */; };
-		E85A60182180A11D00768BD4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A60172180A11D00768BD4 /* MainViewController.swift */; };
+		E85A60182180A11D00768BD4 /* PicsumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A60172180A11D00768BD4 /* PicsumViewController.swift */; };
 		E85A601B2180A11D00768BD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85A60192180A11D00768BD4 /* Main.storyboard */; };
 		E85A601D2180A11F00768BD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85A601C2180A11F00768BD4 /* Assets.xcassets */; };
 		E85A60202180A11F00768BD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85A601E2180A11F00768BD4 /* LaunchScreen.storyboard */; };
 		E85A60292180A43600768BD4 /* HorizontalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A60282180A43600768BD4 /* HorizontalCollectionViewCell.swift */; };
 		E85A602B2180A49100768BD4 /* VerticalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85A602A2180A49100768BD4 /* VerticalTableViewCell.swift */; };
+		E8735C4E218B54B400D2CBB3 /* GreetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8735C4D218B54B400D2CBB3 /* GreetingViewModel.swift */; };
+		E8E0ED7021D398EA00DB0114 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0ED6F21D398EA00DB0114 /* Box.swift */; };
+		E8E0ED7221D399C100DB0114 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0ED7121D399C100DB0114 /* BaseViewModel.swift */; };
+		E8E0ED7421D3CBAC00DB0114 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0ED7321D3CBAC00DB0114 /* BaseViewController.swift */; };
+		E8E0ED7621D3CDC900DB0114 /* PicsumViewModel.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8E0ED7521D3CDC900DB0114 /* PicsumViewModel.swift.swift */; };
+		E8EAA4C4218B610A00DAD17E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAA4C3218B610A00DAD17E /* Extensions.swift */; };
+		E8EAA4C6218B649E00DAD17E /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8EAA4C5218B649E00DAD17E /* Services.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,13 +34,20 @@
 		E82C9FC12180C59800007D1B /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 		E85A60122180A11D00768BD4 /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E85A60152180A11D00768BD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E85A60172180A11D00768BD4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E85A60172180A11D00768BD4 /* PicsumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumViewController.swift; sourceTree = "<group>"; };
 		E85A601A2180A11D00768BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E85A601C2180A11F00768BD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E85A601F2180A11F00768BD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E85A60212180A11F00768BD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E85A60282180A43600768BD4 /* HorizontalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionViewCell.swift; sourceTree = "<group>"; };
 		E85A602A2180A49100768BD4 /* VerticalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalTableViewCell.swift; sourceTree = "<group>"; };
+		E8735C4D218B54B400D2CBB3 /* GreetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewModel.swift; sourceTree = "<group>"; };
+		E8E0ED6F21D398EA00DB0114 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		E8E0ED7121D399C100DB0114 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		E8E0ED7321D3CBAC00DB0114 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		E8E0ED7521D3CDC900DB0114 /* PicsumViewModel.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumViewModel.swift.swift; sourceTree = "<group>"; };
+		E8EAA4C3218B610A00DAD17E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E8EAA4C5218B649E00DAD17E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +70,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E82C9FBE2180BBF200007D1B /* PicsumSupport */ = {
+		E82C9FBE2180BBF200007D1B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8E0ED6F21D398EA00DB0114 /* Box.swift */,
 				E82C9FBF2180BC1C00007D1B /* Picsum.swift */,
+				E8E0ED7121D399C100DB0114 /* BaseViewModel.swift */,
+				E8E0ED7321D3CBAC00DB0114 /* BaseViewController.swift */,
 			);
-			path = PicsumSupport;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E85A60092180A11D00768BD4 = {
@@ -86,10 +103,11 @@
 			isa = PBXGroup;
 			children = (
 				E85A60152180A11D00768BD4 /* AppDelegate.swift */,
-				E82C9FC12180C59800007D1B /* GreetingViewController.swift */,
-				E85A60172180A11D00768BD4 /* MainViewController.swift */,
-				E82C9FBE2180BBF200007D1B /* PicsumSupport */,
-				E85A60272180A35C00768BD4 /* TableContent */,
+				E8EAA4C3218B610A00DAD17E /* Extensions.swift */,
+				E8735C4C218B4F9A00D2CBB3 /* Networking */,
+				E82C9FBE2180BBF200007D1B /* Model */,
+				E8E0ED6E21D35B5000DB0114 /* Greeting scene */,
+				E8735C4B218B4F0300D2CBB3 /* Picsum collection scene */,
 				E85A60192180A11D00768BD4 /* Main.storyboard */,
 				E85A601C2180A11F00768BD4 /* Assets.xcassets */,
 				E85A601E2180A11F00768BD4 /* LaunchScreen.storyboard */,
@@ -98,13 +116,32 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
-		E85A60272180A35C00768BD4 /* TableContent */ = {
+		E8735C4B218B4F0300D2CBB3 /* Picsum collection scene */ = {
 			isa = PBXGroup;
 			children = (
+				E85A60172180A11D00768BD4 /* PicsumViewController.swift */,
+				E8E0ED7521D3CDC900DB0114 /* PicsumViewModel.swift.swift */,
 				E85A60282180A43600768BD4 /* HorizontalCollectionViewCell.swift */,
 				E85A602A2180A49100768BD4 /* VerticalTableViewCell.swift */,
 			);
-			path = TableContent;
+			path = "Picsum collection scene";
+			sourceTree = "<group>";
+		};
+		E8735C4C218B4F9A00D2CBB3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E8EAA4C5218B649E00DAD17E /* Services.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E8E0ED6E21D35B5000DB0114 /* Greeting scene */ = {
+			isa = PBXGroup;
+			children = (
+				E82C9FC12180C59800007D1B /* GreetingViewController.swift */,
+				E8735C4D218B54B400D2CBB3 /* GreetingViewModel.swift */,
+			);
+			path = "Greeting scene";
 			sourceTree = "<group>";
 		};
 		FC63AB3C3DE98C6C8B528EAB /* Pods */ = {
@@ -218,6 +255,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Test/Pods-Test-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -225,6 +263,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -238,12 +277,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E0ED7621D3CDC900DB0114 /* PicsumViewModel.swift.swift in Sources */,
 				E82C9FC02180BC1C00007D1B /* Picsum.swift in Sources */,
+				E8E0ED7221D399C100DB0114 /* BaseViewModel.swift in Sources */,
 				E82C9FC22180C59800007D1B /* GreetingViewController.swift in Sources */,
-				E85A60182180A11D00768BD4 /* MainViewController.swift in Sources */,
+				E85A60182180A11D00768BD4 /* PicsumViewController.swift in Sources */,
+				E8EAA4C4218B610A00DAD17E /* Extensions.swift in Sources */,
+				E8E0ED7421D3CBAC00DB0114 /* BaseViewController.swift in Sources */,
+				E8735C4E218B54B400D2CBB3 /* GreetingViewModel.swift in Sources */,
 				E85A60292180A43600768BD4 /* HorizontalCollectionViewCell.swift in Sources */,
 				E85A60162180A11D00768BD4 /* AppDelegate.swift in Sources */,
+				E8EAA4C6218B649E00DAD17E /* Services.swift in Sources */,
 				E85A602B2180A49100768BD4 /* VerticalTableViewCell.swift in Sources */,
+				E8E0ED7021D398EA00DB0114 /* Box.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

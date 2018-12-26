@@ -8,4 +8,5 @@ target 'Test' do
   # Pods for UrbanChallenger
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'SwiftyJSON'
 end
