@@ -109,8 +109,8 @@
 				E8E0ED6E21D35B5000DB0114 /* Greeting scene */,
 				E8735C4B218B4F0300D2CBB3 /* Picsum collection scene */,
 				E85A60192180A11D00768BD4 /* Main.storyboard */,
-				E85A601C2180A11F00768BD4 /* Assets.xcassets */,
 				E85A601E2180A11F00768BD4 /* LaunchScreen.storyboard */,
+				E85A601C2180A11F00768BD4 /* Assets.xcassets */,
 				E85A60212180A11F00768BD4 /* Info.plist */,
 			);
 			path = Test;

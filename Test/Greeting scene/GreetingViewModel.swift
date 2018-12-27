@@ -14,25 +14,29 @@ class GreetingViewModel: BaseViewModel {
     var placeholderImage = UIImage()
     
     let numberOfPictures: Box<String> = Box("")
-    let error: Box<PicsumError> = Box(.noStatus)
+    let error: Box<PicsumError?> = Box(nil)
     let btnProceedActive: Box<Bool> = Box(false)
     let segueIdentifierToPerform: Box<String?> = Box(nil)
+    
+    private var placeholderImageHasBeenDownloaded = false
+    private var listWithImagesHasBeenDownloaded = false
     
     override init() {
         super.init()
         
         getPlaceholder()
-        getListOfImages()
     }
     
     func getPlaceholder() {
         Services.shared.getPlaceholderImage { [unowned self] (image, errorMessage) in
             if let placeholder = image {
                 self.placeholderImage = placeholder
+                self.placeholderImageHasBeenDownloaded = true
+                print(" Placeholder is downloaded.\n")
+                self.getListOfImages()
             } else if let e = errorMessage {
                 self.error.value = e
             }
-            print(" Placeholder is downloaded.\n")
         }
     }
     
@@ -42,8 +46,9 @@ class GreetingViewModel: BaseViewModel {
                 self.error.value = e
             } else {
                 self.downloadedListOfImages = images
+                self.listWithImagesHasBeenDownloaded = true
+                print(" List is downloaded.\n")
             }
-            print(" List is downloaded.\n")
         }
     }
     
@@ -108,9 +113,11 @@ class GreetingViewModel: BaseViewModel {
     func changeNumberOfPictures(with text: String) {
         numberOfPictures.value = text
         if text == "" {
-             btnProceedActive.value = false
+            btnProceedActive.value = false
         } else {
-            btnProceedActive.value = true
+            if listWithImagesHasBeenDownloaded && placeholderImageHasBeenDownloaded {
+                btnProceedActive.value = true
+            }
         }
     }
     

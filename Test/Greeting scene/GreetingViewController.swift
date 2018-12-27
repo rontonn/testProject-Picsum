@@ -31,6 +31,13 @@ class GreetingViewController: BaseViewController {
             self.btnProceed.alpha = isActive ? 1.0 : 0.5
         }
         
+        greetingModel.error.bind { error in
+            guard let e = error else { return }
+            DispatchQueue.main.async {[unowned self] in
+                self.displayAlertWithOneAction(titleForAlert: "Error.", message: e.localizedDescription)
+            }
+        }
+        
         greetingModel.segueIdentifierToPerform.bind {[unowned self] identifier in
             
             guard let id = identifier else { return }

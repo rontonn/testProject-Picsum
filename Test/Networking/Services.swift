@@ -32,7 +32,6 @@ class Services {
     func getPlaceholderImage(completion: @escaping (UIImage?, PicsumError?) -> Void) {
         
         Alamofire.request(URL(string: "https://picsum.photos/300")!).responseImage { response in
-            
             if let e = response.error {
                 completion(nil, .requestFailed(e))
                 return
@@ -60,6 +59,7 @@ class Services {
     func fetchPicsumImage(completion: @escaping ([PicsumImage], PicsumError?) -> Void) {
         
         Alamofire.request(URL(string: "https://picsum.photos/list")!).responseJSON { response in
+            
             if let e = response.error {
                 completion([PicsumImage](), .requestFailed(e))
                 return

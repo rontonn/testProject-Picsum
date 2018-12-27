@@ -11,11 +11,11 @@ import UIKit
 
 extension UIViewController {
     
-    func displayAlertWithOneAction(titleForAlert: String, message: String, titleForActionButton: String) {
+    func displayAlertWithOneAction(titleForAlert: String, message: String) {
         
         let alert = UIAlertController(title: titleForAlert, message: message, preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: titleForActionButton, style: .default, handler: { action in }))
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in }))
         self.present(alert, animated: true, completion: nil)
     }
 }
