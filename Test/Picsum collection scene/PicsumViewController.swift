@@ -85,7 +85,10 @@ extension PicsumViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HorizontalCollectionViewCell", for: indexPath) as! HorizontalCollectionViewCell
         
-        cell.imageViewForImageFromPicsum.af_setImage(withURL: URL(string: "https://picsum.photos/300/300?image=\(picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)")!, placeholderImage: picsumViewModel.placeholder, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.25), runImageTransitionIfCached: false, completion: { response in })
+        if let url = URL(string: "https://picsum.photos/300/300?image=\(picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].id)") {
+            cell.imageViewForImageFromPicsum.af_setImage(withURL: url, placeholderImage: picsumViewModel.placeholder, filter: nil, progress: nil, progressQueue: DispatchQueue.main, imageTransition: .crossDissolve(0.25), runImageTransitionIfCached: false, completion: { response in })
+        }
+        
         cell.layer.cornerRadius = 12.0
         cell.lblAuthorName.text = picsumViewModel.listOfPrefferedNumberOfImages[collectionView.tag][indexPath.row].author
         

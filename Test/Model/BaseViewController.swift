@@ -11,7 +11,7 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
-    var commmonTypeViewModel:BaseViewModel!
+    var commmonTypeViewModel: BaseViewModel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

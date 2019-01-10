@@ -57,7 +57,12 @@ class GreetingViewModel: BaseViewModel {
     }
     
     private func prepareImagesForCollectionViewOnNextScreen() {
-        var numberOfImages = Int(numberOfPictures.value)!
+        var numberOfImages = 0
+        
+        if let number = Int(numberOfPictures.value) {
+            numberOfImages = number
+        }
+        
         var numberOfSectionsInTheTable = 0
         var arrayForCollectionViewCells = [Int]()
         var imagesForCollectionView = [[PicsumImage]]()
@@ -99,7 +104,9 @@ class GreetingViewModel: BaseViewModel {
             var tempArray = [PicsumImage]()
             
             for _ in 0...numberOfElementsInCollectionView - 1 {
-                tempArray.append(downloadedListOfImages.randomElement()!)
+                if let random = downloadedListOfImages.randomElement() {
+                    tempArray.append(random)
+                }
             }
             imagesForCollectionView.append(tempArray)
             tempArray.removeAll()

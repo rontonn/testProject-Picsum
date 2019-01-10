@@ -67,7 +67,9 @@ class GreetingViewController: BaseViewController {
 extension GreetingViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let userInput = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        guard let text = textField.text else { return true }
+        
+        let userInput = (text as NSString).replacingCharacters(in: range, with: string)
         
         greetingModel.changeNumberOfPictures(with: userInput)
         return true
